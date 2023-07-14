@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import Cardapio from './Pages/Cardapio';
+import 'index.css';
+import Cardapio from 'Pages/Cardapio';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <div>Aluroni</div>
     <Cardapio />
   </React.StrictMode>
 );
