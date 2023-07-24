@@ -1,5 +1,5 @@
-import styles from "./Buscador.module.scss";
-import { CgSearch } from "react-icons/cg";
+import styles from './Buscador.module.scss';
+import { CgSearch } from 'react-icons/cg';
 
 interface IBuscador {
   busca: string,
@@ -12,5 +12,5 @@ export default function Buscador({ busca, setBusca }: IBuscador) {
       <input title="busca" type="text" value={busca} onChange={e => setBusca(e.target.value)} />
       <CgSearch size={20} color="#4c4d5e" />
     </div>
-  )
+  );
 }

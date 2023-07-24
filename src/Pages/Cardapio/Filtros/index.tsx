@@ -1,6 +1,6 @@
-import styles from './Filtros.module.scss'
-import filtros from './filtros.json'
-import classNames from 'classnames'
+import styles from './Filtros.module.scss';
+import filtros from './filtros.json';
+import classNames from 'classnames';
 
 type IOpcao = typeof filtros[0]
 
@@ -13,7 +13,7 @@ export default function Filtros({ filtro, setFiltro }: IFiltro) {
 
   function selecionarFiltro(opcao: IOpcao) {
     if (filtro === opcao.id) return setFiltro(null);
-    return setFiltro(opcao.id)
+    return setFiltro(opcao.id);
 
   }
 
@@ -28,5 +28,5 @@ export default function Filtros({ filtro, setFiltro }: IFiltro) {
         </button>
       ))}
     </div>
-  )
+  );
 }

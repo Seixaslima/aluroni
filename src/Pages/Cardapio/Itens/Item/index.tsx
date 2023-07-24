@@ -1,11 +1,11 @@
-import styles from './Item.module.scss'
-import itens from '../itens.json'
+import styles from './Item.module.scss';
+import itens from '../itens.json';
 import classNames from 'classnames';
 
 type item = typeof itens[0];
 
 export default function Item(props: item) {
-  const { title, description, category, size, serving, price, photo } = props
+  const { title, description, category, size, serving, price, photo } = props;
   return (
     <div className={styles.item}>
       <div className={styles.item__imagem}>
@@ -25,7 +25,7 @@ export default function Item(props: item) {
             {size}g
           </div>
           <div className={styles.item__qtdpessoas}>
-            serve {serving} pessoa{serving === 1 ? "" : "s"}
+            serve {serving} pessoa{serving === 1 ? '' : 's'}
           </div>
           <div className={styles.item__valor}>
             R$ {price.toFixed(2)}
@@ -35,5 +35,5 @@ export default function Item(props: item) {
       </div>
 
     </div>
-  )
+  );
 }
