@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Item from './Item';
 import styles from './Itens.module.scss';
-import cardapio from './itens.json';
+import cardapio from 'data/cardapio.json';
 
 interface IItens {
   busca: string,
@@ -33,12 +33,11 @@ export default function Itens(props: IItens) {
         return lista.sort((a, b) => a.serving >= b.serving ? 1 : -1);
       case 'preco':
         return lista.sort((a, b) => a.price >= b.price ? 1 : -1);
-
       default:
         return lista;
       }
     }
-    
+
     const novaLista = cardapio.filter((item) => (
       testaBusca(item.title) && testaFiltro(item.category.id)
     ));
