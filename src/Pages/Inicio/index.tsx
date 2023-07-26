@@ -2,8 +2,10 @@ import styles from './Inicio.module.scss';
 import stylesTema from 'styles/Tema.module.scss';
 import cardapio from 'data/cardapio.json';
 import nossaCasa from 'assets/nossa_casa.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function Inicio() {
+  const navigate = useNavigate();
   let pratosRecomendados = [...cardapio];
   pratosRecomendados = pratosRecomendados.sort(() => 0.5 - Math.random()).splice(0, 3);
   return (
@@ -15,7 +17,7 @@ export default function Inicio() {
             <div className={styles.recomendado__imagem}>
               <img src={item.photo} alt={item.title} />
             </div>
-            <button className={styles.recomendado__botao}>
+            <button className={styles.recomendado__botao} onClick={() => navigate(`/prato/${item.id}`)} >
               ver mais
             </button>
           </div>

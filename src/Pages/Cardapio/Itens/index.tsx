@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Item from './Item';
 import styles from './Itens.module.scss';
 import cardapio from 'data/cardapio.json';
+import { Cardapio } from 'types/Pratos';
 
 interface IItens {
   busca: string,
@@ -25,16 +26,16 @@ export default function Itens(props: IItens) {
       return true;
     }
 
-    function ordenaLista(lista: typeof cardapio) {
+    function ordenaLista(lista: Cardapio) {
       switch (ordenador) {
-      case 'porcao':
-        return lista.sort((a, b) => a.size >= b.size ? 1 : -1);
-      case 'qtd_pessoas':
-        return lista.sort((a, b) => a.serving >= b.serving ? 1 : -1);
-      case 'preco':
-        return lista.sort((a, b) => a.price >= b.price ? 1 : -1);
-      default:
-        return lista;
+        case 'porcao':
+          return lista.sort((a, b) => a.size >= b.size ? 1 : -1);
+        case 'qtd_pessoas':
+          return lista.sort((a, b) => a.serving >= b.serving ? 1 : -1);
+        case 'preco':
+          return lista.sort((a, b) => a.price >= b.price ? 1 : -1);
+        default:
+          return lista;
       }
     }
 
