@@ -2,8 +2,9 @@ import TagsPrato from 'Components/TagsPrato';
 import styles from './Item.module.scss';
 import { Prato } from 'types/Pratos';
 import { useNavigate } from 'react-router-dom';
+import { memo } from 'react';
 
-export default function Item(props: Prato) {
+function Item(props: Prato) {
   const { id, title, description, photo } = props;
   const navigate = useNavigate();
   return (
@@ -23,3 +24,5 @@ export default function Item(props: Prato) {
     </div>
   );
 }
+
+export default memo(Item);
